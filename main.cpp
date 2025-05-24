@@ -90,6 +90,32 @@ public:
     }
 };
 
+class Playlist {
+private:
+    string Name;
+
+
+public:
+
+
+    int numberOfSongs;
+    vector<Music *> musics;
+
+    Playlist(string N, int n) {
+        Name = N;
+        numberOfSongs = n;
+    }
+
+    void addMusic(Music *m) {
+        musics.push_back(m);
+    }
+
+    string getName() {
+        return Name;
+    }
+
+};
+
 class Music {
 private:
     string name;
@@ -149,13 +175,13 @@ public:
 
 class Database {
 public :
-    vector<string> Username;
-    vector<string> Password;
+    vector <string> Username;
+    vector <string> Password;
 };
 
 class Lobby {
 public:
-    vector<Playlist> playlists;
+    vector <Playlist> playlists;
     Database D1;
     Admin A1;
     User U1;
@@ -535,4 +561,6 @@ int main() {
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     return 0;
 }
-    
+
+
+
