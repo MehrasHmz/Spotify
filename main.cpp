@@ -526,3 +526,12 @@ public:
         } while (choice1 != 3);
     }
 };
+
+int main() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+    Lobby L1;
+    L1.Run();
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    return 0;
+}
