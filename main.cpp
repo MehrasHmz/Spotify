@@ -146,3 +146,9 @@ public:
         return genre;
     }
 };
+
+class Database {
+public :
+    vector<string> Username;
+    vector<string> Password;
+};
