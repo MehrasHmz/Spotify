@@ -89,3 +89,87 @@ public:
         return NumberofMusics;
     }
 };
+
+class Music {
+private:
+    string name;
+    Artist *artist = nullptr;
+    string releaseYear;
+    string genre;
+
+public:
+
+    void setArtistPointer(Artist *a) {
+        artist = a;
+    }
+
+    Music() = default;
+
+    Music(string n, string r, string g) {
+        name = n;
+        releaseYear = r;
+        genre = g;
+    }
+
+    void setName(string n) {
+        name = n;
+    }
+
+    string getName() const {
+        return name;
+    }
+
+    void setartist(string n) {
+        if (artist)
+            artist->setName(n);
+    }
+
+    string getArtist() const {
+        if (artist)
+            return artist->getName();
+        return "Unknown";
+    }
+
+    void SetReleaseYear(string r) {
+        releaseYear = r;
+    }
+
+    string getReleaseYear() const {
+        return releaseYear;
+    }
+
+    void setGenre(string g) {
+        genre = g;
+    }
+
+    string getGenre() const {
+        return genre;
+    }
+};
+
+class Playlist {
+private:
+    string Name;
+
+
+public:
+
+
+    int numberOfSongs;
+    vector<Music *> musics;
+
+    Playlist(string N, int n) {
+        Name = N;
+        numberOfSongs = n;
+    }
+
+    void addMusic(Music *m) {
+        musics.push_back(m);
+    }
+
+    string getName() {
+        return Name;
+    }
+
+};
+
